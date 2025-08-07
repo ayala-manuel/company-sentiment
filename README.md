@@ -127,14 +127,21 @@ python -m training.train --data-path data/tu_dataset.csv --output model.pt
 
 El script `training/dataset_processor.py` contiene utilidades para preparar el dataset (tokenización, limpieza, split).
 
-## Contribuciones
+## Docker
+El repositorio contiene un DockerFile y docker-compose para levantar el modelo en api. 
+```bash
+  docker-compose up -d
+  docker run sentiment-model
+```
 
-1. Haz un fork del repositorio.
-2. Crea una rama para tu feature: `git checkout -b feature/nombre`
-3. Realiza tus cambios y commitea: `git commit -m "Agrega nueva funcionalidad X"`
-4. Empuja tu rama: `git push origin feature/nombre`
-5. Abre un Pull Request.
+#TODO: Insertar en dockerfile la instalación de punkt_tab para ntlk, de momento es manual:
+```bash
+  docker exec -it sentiment-model bash .
+  pip install ntlk
+```
 
-## Licencia
+```python
+  import ntlk
+  ntlk.download('punkt_tab')
+```
 
-Este proyecto está bajo la licencia MIT. Consulta `LICENSE` para más detalles.
