@@ -1,0 +1,8 @@
+training/
+data/
+.git
+__pycache__/
+*.pyc
+code/
+dist/
+datasets/
